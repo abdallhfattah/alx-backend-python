@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-from typing import List, Union , Tuple
-import math
+from typing import Union, Tuple
 
 """
     Basic annotations for variables.
 """
 
 
-def to_kv(a : str , b : Union[float , int]) -> Tuple[str, float]:
+def to_kv(k: str, b: Union[float, int]) -> Tuple[str, float]:
     """
-    Takes a list input_list of floats as argument
-    returns their sum as a float.
+    takes a string k and an int OR float v as arguments
+    returns a tuple.
     """
-    return (a , math.pow(b , 2))
+    return (k, b**2)
