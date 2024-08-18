@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-from typing import Union, Tuple
-
-"""
-    Basic annotations for variables.
-"""
+""" Complex types - string and int/float to tuple"""
+from typing import Callable, Iterator, Union, Optional, List, Tuple
 
 
-def to_kv(k: str, b: Union[float, int]) -> Tuple[str, float]:
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     """
     takes a string k and an int OR float v as arguments
     returns a tuple.
     """
-    return (k, b**2)
+
+    return (k, v**2)
