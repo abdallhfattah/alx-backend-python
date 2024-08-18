@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from typing import List, Union
+from typing import List, Union , Tuple
 import math
 
 """
@@ -7,7 +7,7 @@ import math
 """
 
 
-def to_kv(a : str , b : Union[float , int]) -> tuple:
+def to_kv(a : str , b : Union[float , int]) -> Tuple[str, float]:
     """
     Takes a list input_list of floats as argument
     returns their sum as a float.
