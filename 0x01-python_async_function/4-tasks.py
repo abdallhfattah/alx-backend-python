@@ -1,21 +1,18 @@
 #!/usr/bin/env python3
-""" Import wait_random from the previous python file that you’ve written and
-    write an async routine called wait_n that takes in 2 int arguments:
-    max_delay and n. You will spawn wait_random n times with the specified
-    max_delay. wait_n should return the list of all the delays (float values).
-    The list of the delays should be in ascending order without using sort()
-    because of concurrency. """
+""" Take the code from wait_n and alter it into a new function task_wait_n.
+The code is nearly identical to wait_n except task_wait_random
+is being called."""
 import asyncio
 from typing import List
 
-task_wait_random = __import__("3-tasks").task_wait_random
+task_wait_random = __import__('3-tasks').task_wait_random
 
 
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
-    """Let's execute multiple coroutines at the same time with async"""
+    """Tasks"""
     delays: List[float] = []
     all_delays: List[float] = []
-    for i in range(n):
+    for _ in range(n):
         delays.append(task_wait_random(max_delay))
     for delay in asyncio.as_completed(delays):
         earliest_result = await delay
